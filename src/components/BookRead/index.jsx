@@ -1,9 +1,14 @@
+import "./bookRead.css";
+
 function BookRead(props) {
   return (
-    <div>
-      <p>hola</p>
-      <p>hola</p>
-    </div>
+    <aside className="modal-container">
+      <article className="modal-list--read">
+        <div className="book">
+          <p>libro</p>
+        </div>
+      </article>
+    </aside>
   );
 }
 

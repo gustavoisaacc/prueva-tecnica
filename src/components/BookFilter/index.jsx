@@ -1,9 +1,13 @@
+import "./bookFilter.css";
+import { InputRanger, InputSelect, InputSerch } from "./inputs";
+
 function BookFilter(props) {
   return (
-    <div>
-      <p>hola</p>
-      <p>hola</p>
-    </div>
+    <section className="filter-container">
+      <InputSerch />
+      <InputRanger />
+      <InputSelect />
+    </section>
   );
 }
 

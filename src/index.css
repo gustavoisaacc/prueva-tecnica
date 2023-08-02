@@ -38,6 +38,12 @@ html{
   align-items: center;
 }
 
+#root{
+  display: grid;
+  gap: 3rem;
+  place-items: center;
+}
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;
