@@ -1,10 +1,9 @@
 import "./bookFilter.css";
-import { InputRanger, InputSelect, InputSerch } from "./inputs";
+import { InputRanger, InputSelect } from "./inputs";
 
 function BookFilter(props) {
   return (
     <section className="filter-container">
-      <InputSerch />
       <InputRanger />
       <InputSelect />
     </section>

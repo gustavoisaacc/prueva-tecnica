@@ -1,0 +1,7 @@
+.nav{
+  width: 100%;
+  background: var(--gray);
+  padding: 4rem 2rem;
+  display: flex;
+  justify-content: space-between;
+}

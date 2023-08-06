@@ -5,3 +5,34 @@
   flex-wrap: wrap;
   gap: 2rem;
 }
+
+.label input{
+  margin: 0 1rem;
+}
+
+.label--search{
+  display: none;
+  position: relative;
+}
+
+.filter--select{
+  border: 1px solid var(--gray);
+  padding: 0.4rem 0.8rem;
+}
+
+@media (min-width: 980px) {
+  .label--search{
+    display: block;
+  }
+  .logo--search{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+  }
+
+  .filter--search {
+    padding: 0.3rem 0.8rem;
+    border-radius: 1rem;
+    border: 1px solid var(--gray);
+  }
+}

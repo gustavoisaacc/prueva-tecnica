@@ -1,5 +1,19 @@
 .lista-book--container{
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   place-content: center;
+}
+
+@media (min-width: 780px) {
+  .lista-book--container{
+   grid-template-columns: repeat(3, 1fr);
+
+  }
+}
+@media (min-width: 1000px) {
+  .lista-book--container{
+   grid-template-columns: repeat(4, 1fr);
+
+  }
 }

@@ -1,13 +1,24 @@
+import { useState } from "react";
+import Modal from "./Modal";
 import "./bookRead.css";
 
-function BookRead(props) {
+function BookRead() {
+  const [openModal, setOpenModal] = useState(false);
+
+  const handelClick = () => {
+    setOpenModal((state) => !state);
+  };
+
   return (
-    <aside className="modal-container">
-      <article className="modal-list--read">
-        <div className="book">
-          <p>libro</p>
-        </div>
-      </article>
+    <aside className="list-read">
+      <button onClick={handelClick} className="btn-modal">
+        Lista de lectura
+      </button>
+      <Modal
+        openModal={openModal}
+        setOpenModal={setOpenModal}
+        handelClick={handelClick}
+      />
     </aside>
   );
 }

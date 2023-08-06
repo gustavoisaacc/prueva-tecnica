@@ -1,13 +1,16 @@
 import BookFilter from "./components/BookFilter";
 import ListBook from "./components/ListBook";
-import BookRead from "./components/BookRead";
+import { useContext } from "react";
+import { BookContext } from "./useContext";
+import Header from "./components/Header";
 
 function App() {
+  const { countBook } = useContext(BookContext);
   return (
     <>
-      <h1>Libros Disponibles</h1>
+      <Header />
+      <h1>{countBook} Libros Disponibles</h1>
       <BookFilter />
-      <BookRead />
       <ListBook />
     </>
   );
