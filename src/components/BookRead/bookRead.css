@@ -10,7 +10,7 @@
     place-items: center;
 }
 .modal-list--read{
-  width: 35rem;
+  width: 85%;
   height: 50rem;
   background-color: var(--white);
   overflow: auto;
@@ -26,6 +26,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
+  place-content: center;
 }
 
 .clouse{

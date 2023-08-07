@@ -11,7 +11,7 @@ function Modal({ openModal, handelClick }) {
         <div className="clouse" onClick={handelClick}>
           X
         </div>
-        <h3>Lista de lectura</h3>
+        <h3>{listRead.length} Lista de lectura</h3>
         <div className="book">
           {listRead.map((book, i) => {
             console.log(book);
