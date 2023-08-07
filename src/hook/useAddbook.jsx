@@ -7,7 +7,10 @@ export function useBook(initialSate) {
     "BOOK_V1",
     initialSate
   );
-  const [listState, setListState] = useState([]);
+  const { item: listState, saveItem: setListState } = useLocalStorage(
+    "LIST_V1",
+    initialSate
+  );
 
   const addListBook = (id, bookL) => {
     const deleteListBook = state.filter((book) => book.ISBN !== id);
