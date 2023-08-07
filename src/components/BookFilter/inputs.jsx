@@ -4,6 +4,9 @@ import { AiOutlineSearch } from "react-icons/ai";
 
 export function InputSerch(props) {
   const { search, setSearch } = useContext(BookContext);
+  const handelChange = (e) => {
+    setSearch(e.target.value);
+  };
 
   return (
     <label className="label--search">
@@ -12,7 +15,7 @@ export function InputSerch(props) {
         className="filter--search"
         placeholder="Harry Potter"
         value={search}
-        onChange={(e) => setSearch(e.target.value)}
+        onChange={handelChange}
       />
       <AiOutlineSearch className="logo--search" />
     </label>

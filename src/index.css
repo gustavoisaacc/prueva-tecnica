@@ -48,5 +48,17 @@ html{
   display: grid;
   gap: 3rem;
   place-items: center;
-  margin-bottom: 10rem;
+
+}
+
+footer{
+  background-color: var(--blue);
+  width: 100%;
+  padding: 2rem;
+  margin-top: 1rem;
+
+}
+
+footer h1{
+  text-align: center;
 }

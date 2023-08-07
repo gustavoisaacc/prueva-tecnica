@@ -4,4 +4,17 @@
   padding: 4rem 2rem;
   display: flex;
   justify-content: space-between;
+  background-color: var(--blue);
+}
+
+.logo span{
+  margin-left: .5rem;
+  color: var(--gray);
+}
+.logo .logo--svg{
+  vertical-align: bottom;
+  fill: var(--gray);
+  font-size: 2rem;
+  transform: rotate(90deg);
+
 }

@@ -19,17 +19,20 @@ export function BookProvide({ children }) {
 
   const maches = useMemo(() => {
     return books.filter((book) => {
+      if (
+        (search && book.title.toLowerCase().includes(search.toLowerCase())) ||
+        (search &&
+          book.author.name.toLowerCase().includes(search.toLowerCase()))
+      )
+        return true;
+
       if (genre && book.genre === genre) return true;
 
       if (range && book.pages >= range) return true;
 
-      if (book.title.includes(search)) {
-        console.log(search);
-      }
-
       return false;
     });
-  }, [genre, range, search]);
+  }, [genre, range, search, books]);
 
   const countBook = maches.length !== 0 ? maches.length : books.length;
   return (
