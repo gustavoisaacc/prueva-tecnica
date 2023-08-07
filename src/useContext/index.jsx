@@ -1,18 +1,20 @@
-import data from "./book.json";
 import { createContext, useEffect, useMemo, useState } from "react";
-
+import { useBook } from "../hook/useAddbook";
 export const BookContext = createContext();
 
 export function BookProvide({ children }) {
-  const [books, setBook] = useState([]);
-  const [listRead, setListBook] = useState([]);
+  const {
+    state: books,
+    listState: listRead,
+    addListBook,
+    deleteListBook,
+  } = useBook([]);
 
   // filter
   const [genre, setGenre] = useState("");
   const [range, setRange] = useState(0);
   const [search, setSearch] = useState("");
 
-  let countBook;
   const genres = Array.from(new Set(books.map((book) => book.genre)));
 
   const maches = useMemo(() => {
@@ -29,24 +31,15 @@ export function BookProvide({ children }) {
     });
   }, [genre, range, search]);
 
-  useEffect(() => {
-    const books = data.library.map((item) => item.book);
-    setBook(books);
-    countBook = maches.length !== 0 ? maches.length : books.length;
-  }, [maches]);
-
-  const addListaRead = (e) => {
-    console.log("hola");
-  };
+  const countBook = maches.length !== 0 ? maches.length : books.length;
   return (
     <BookContext.Provider
       value={{
         books,
-        setBook,
         listRead,
-        setListBook,
         countBook,
-        addListaRead,
+        addListBook,
+        deleteListBook,
         genres,
         genre,
         setGenre,

@@ -3,8 +3,14 @@ import { useContext } from "react";
 import "./listItem.css";
 import { BookContext } from "../../useContext";
 
-function ListaItem({ title, author, cover, genre }) {
-  const { addListaRead } = useContext(BookContext);
+function ListaItem({ book }) {
+  const { addListBook, deleteListBook } = useContext(BookContext);
+  const { title, author, cover, genre, ISBN, complete } = book;
+
+  const botton = complete ? "Eliminar Lista" : "Agregar Lista";
+  const handleClick = (id, book) =>
+    complete ? deleteListBook(id, book) : addListBook(id, book);
+
   return (
     <li className="list-item">
       <figure className="list-item--img">
@@ -22,9 +28,9 @@ function ListaItem({ title, author, cover, genre }) {
       <button
         className="btn"
         id={title}
-        onClick={(e) => addListaRead(e, title)}
+        onClick={() => handleClick(ISBN, book)}
       >
-        Agregar lista
+        {botton}
       </button>
     </li>
   );

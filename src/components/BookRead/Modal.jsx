@@ -15,11 +15,7 @@ function Modal({ openModal, handelClick }) {
         <div className="book">
           {listRead.map((book, i) => {
             console.log(book);
-            return (
-              <div key={book.ISBN}>
-                <p>assd</p>
-              </div>
-            );
+            return <ListaItem key={book.ISBN} book={book} />;
           })}
         </div>
       </article>

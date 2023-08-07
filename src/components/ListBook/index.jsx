@@ -11,14 +11,7 @@ function ListBook() {
     <section className="list-book">
       <ul className="lista-book--container">
         {filter.map((book) => (
-          <ListaItem
-            key={book.ISBN}
-            books={books}
-            title={book.title}
-            author={book.author.name}
-            cover={book.cover}
-            genre={book.genre}
-          />
+          <ListaItem key={book.ISBN} book={book} />
         ))}
       </ul>
     </section>
